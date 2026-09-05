@@ -59,10 +59,10 @@
   .month-head .range{font-size:11.5px;color:var(--muted);margin-top:2px;margin-bottom:12px;}
 
   .lessons-col{display:flex;flex-direction:column;gap:8px;}
-  .lesson{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;padding:9px 10px;border-radius:12px;background:var(--cream);cursor:pointer;}
+  .lesson{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;padding:9px 10px;border-radius:12px;background:var(--cream);}
   .lesson .title{font-size:12.6px;line-height:1.45;color:var(--navy);font-weight:500;}
   .lesson .ref{color:var(--muted);font-weight:600;}
-  .lesson input.chk{appearance:none;width:18px;height:18px;border-radius:6px;border:2px solid var(--navy);flex:none;margin-top:1px;cursor:pointer;position:relative;background:var(--white);}
+  .lesson input.chk{appearance:none;width:18px;height:18px;border-radius:6px;border:2px solid var(--navy);flex:none;margin-top:1px;cursor:default;position:relative;background:var(--white);opacity:1 !important;}
   .lesson input.chk:checked{background:var(--lime);border-color:var(--lime);}
   .lesson input.chk:checked::after{content:"";position:absolute;left:5px;top:1px;width:4px;height:9px;border:solid var(--navy);border-width:0 2px 2px 0;transform:rotate(45deg);}
 
@@ -83,20 +83,26 @@
   .cta h3{font-family:'Unbounded',sans-serif;color:#fff;font-size:20px;margin:0 0 8px;text-transform:uppercase;}
   .cta p{color:#C7C6E6;font-size:13.5px;line-height:1.6;margin:0;}
 
-  .roadmap-scroll{scroll-snap-type:x proximity;}
-  .month-col{scroll-snap-align:start;}
+  .roadmap-scroll{}
+  .month-col{}
 
   @media (max-width:720px){
-    body{padding:28px 16px 50px;}
-    h1{font-size:32px;}
-    .sub{font-size:13.5px;}
-    .goals,.goals-alt{padding:18px 18px;}
-    .goals-alt .big-line{font-size:18px;}
-    .progress-band{padding:20px 20px;}
-    .progress-band .big{font-size:28px;}
-    .month-col{width:78vw;}
-    .cta{padding:24px 22px;}
-    .cta h3{font-size:17px;}
+    body{padding:32px 18px 60px;}
+    h1{font-size:32px;margin-bottom:16px;}
+    .sub{font-size:14px;line-height:1.7;margin-bottom:30px;}
+    .goals,.goals-alt{padding:22px 20px;margin-bottom:20px;}
+    .goals p,.goals-alt p{line-height:1.85;}
+    .goals-alt .big-line{font-size:19px;margin-bottom:14px;}
+    .progress-band{padding:24px 22px;margin-bottom:32px;gap:20px;}
+    .progress-band .big{font-size:30px;}
+    .scroll-hint{margin-bottom:14px;}
+    .month-col{width:80vw;padding:20px 18px 16px;}
+    .lessons-col{gap:10px;}
+    .lesson{padding:12px 12px;}
+    .lesson .title{line-height:1.55;}
+    .cta{padding:26px 24px;margin-top:36px;}
+    .cta h3{font-size:17px;margin-bottom:10px;}
+    .cta p{line-height:1.7;}
   }
 </style>
 </head>
@@ -109,7 +115,7 @@
 
   <div class="goals">
     <div class="tag">как будем расти?</div>
-    <p>Голова работает быстро — это уже есть. Теперь учимся не отдавать баллы из-за мелочей. Главная зона роста — внимательность и самопроверка: решение знает, но иногда ошибается просто потому, что не остановился и не сверил ответ. Поэтому отдельно тренируем навык «решил → проверил → только потом идём дальше». Помимо этого, основное время уходит туда, где чаще теряют баллы: <b>графы (№4, №9)</b> и <b>алгебру логики (№3)</b>. В сентябре — раннее знакомство с таблицами, для вовлечённости.</p>
+    <p>Голова работает быстро — это уже есть. Теперь учимся не отдавать баллы из-за мелочей. Главная зона роста — внимательность и самопроверка: решение знает, но иногда ошибается просто потому, что не остановился и не сверил ответ. Поэтому отдельно тренируем навык «решил → проверил → только потом идём дальше».</p>
   </div>
 
   <div class="goals-alt">
@@ -134,10 +140,10 @@
         <div class="num-badge">01</div>
         <div class="month-head"><div class="name">Сентябрь</div><div class="range">старт, база</div></div>
         <div class="lessons-col">
-          <label class="lesson"><div class="title">Входная диагностика</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Введение в электронные таблицы — новый инструмент, интерфейс и первые формулы</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Измерение информации + дешифровка <span class="ref">№1–2</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Алгебра логики: теория, законы Де Моргана <span class="ref">№3</span></div><input type="checkbox" class="chk"></label>
+          <label class="lesson"><div class="title">Входная диагностика</div><input type="checkbox" class="chk" checked disabled></label>
+          <label class="lesson"><div class="title">Введение в электронные таблицы — новый инструмент, интерфейс и первые формулы</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Измерение информации + дешифровка <span class="ref">№1–2</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Алгебра логики: теория, законы Де Моргана <span class="ref">№3</span></div><input type="checkbox" class="chk" disabled></label>
         </div>
       </div>
 
@@ -145,11 +151,11 @@
         <div class="num-badge">02</div>
         <div class="month-head"><div class="name">Октябрь</div><div class="range">логика, алгоритмы, пробник №1</div></div>
         <div class="lessons-col">
-          <label class="lesson"><div class="title">Системы счисления <span class="ref">№10</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Алгебра логики: практика + операции над множествами <span class="ref">№3, №8</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Линейные алгоритмы «Вычислитель» <span class="ref">№5</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Анализ программы с условием <span class="ref">№6</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Пробник №1 — срез по пройденным темам</div><input type="checkbox" class="chk"></label>
+          <label class="lesson"><div class="title">Системы счисления <span class="ref">№10</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Алгебра логики: практика + операции над множествами <span class="ref">№3, №8</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Линейные алгоритмы «Вычислитель» <span class="ref">№5</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Анализ программы с условием <span class="ref">№6</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Пробник №1 — срез по пройденным темам</div><input type="checkbox" class="chk" disabled></label>
         </div>
       </div>
 
@@ -157,10 +163,10 @@
         <div class="num-badge">03</div>
         <div class="month-head"><div class="name">Ноябрь</div><div class="range">графы + проект №1</div></div>
         <div class="lessons-col">
-          <label class="lesson"><div class="title">Адресация в сети <span class="ref">№7</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Графы: кратчайший путь <span class="ref">№4</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Графы: подсчёт путей <span class="ref">№9</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson project"><div class="title"><b>Проект №1.</b> Визуализатор путей в графе на Python</div><input type="checkbox" class="chk"></label>
+          <label class="lesson"><div class="title">Адресация в сети <span class="ref">№7</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Графы: кратчайший путь <span class="ref">№4</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Графы: подсчёт путей <span class="ref">№9</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson project"><div class="title"><b>Проект №1.</b> Визуализатор путей в графе на Python</div><input type="checkbox" class="chk" disabled></label>
         </div>
       </div>
 
@@ -168,10 +174,10 @@
         <div class="num-badge">04</div>
         <div class="month-head"><div class="name">Декабрь</div><div class="range">исполнители</div></div>
         <div class="lessons-col">
-          <label class="lesson"><div class="title">Робот/Кумир: команды, цикл «пока» <span class="ref">№15</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Робот/Кумир: сложные лабиринты <span class="ref">№15</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Python для ОГЭ: разбор форматов заданий <span class="ref">№16</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Разбор пробника №1 + ревизия: срез по №1–10</div><input type="checkbox" class="chk"></label>
+          <label class="lesson"><div class="title">Робот/Кумир: команды, цикл «пока» <span class="ref">№15</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Робот/Кумир: сложные лабиринты <span class="ref">№15</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Python для ОГЭ: разбор форматов заданий <span class="ref">№16</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Разбор пробника №1 + ревизия: срез по №1–10</div><input type="checkbox" class="chk" disabled></label>
         </div>
       </div>
 
@@ -179,10 +185,10 @@
         <div class="num-badge">05</div>
         <div class="month-head"><div class="name">Январь</div><div class="range">файлы + проект №2</div></div>
         <div class="lessons-col">
-          <label class="lesson"><div class="title">Поиск в файловой системе <span class="ref">№11–12</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson project"><div class="title"><b>Проект №2.</b> Бот-тренажёр по ОГЭ или мини-проект по машинному обучению</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Презентация: критерии <span class="ref">№13.1</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Текстовый документ: критерии <span class="ref">№13.2</span></div><input type="checkbox" class="chk"></label>
+          <label class="lesson"><div class="title">Поиск в файловой системе <span class="ref">№11–12</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson project"><div class="title"><b>Проект №2.</b> Бот-тренажёр по ОГЭ или мини-проект по машинному обучению</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Презентация: критерии <span class="ref">№13.1</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Текстовый документ: критерии <span class="ref">№13.2</span></div><input type="checkbox" class="chk" disabled></label>
         </div>
       </div>
 
@@ -190,10 +196,10 @@
         <div class="num-badge">06</div>
         <div class="month-head"><div class="name">Февраль</div><div class="range">таблицы, пробник №2</div></div>
         <div class="lessons-col">
-          <label class="lesson"><div class="title">Таблицы: формулы, адресация <span class="ref">№14</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Таблицы: диаграммы, фильтры <span class="ref">№14</span></div><input type="checkbox" class="chk"></label>
-          <label class="lesson project"><div class="title">Проект №2 — доработка</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Пробник №2 — на время</div><input type="checkbox" class="chk"></label>
+          <label class="lesson"><div class="title">Таблицы: формулы, адресация <span class="ref">№14</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Таблицы: диаграммы, фильтры <span class="ref">№14</span></div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson project"><div class="title">Проект №2 — доработка</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Пробник №2 — на время</div><input type="checkbox" class="chk" disabled></label>
         </div>
       </div>
 
@@ -201,10 +207,10 @@
         <div class="num-badge">07</div>
         <div class="month-head"><div class="name">Март</div><div class="range">закрытие пробелов, пробник №3</div></div>
         <div class="lessons-col">
-          <label class="lesson"><div class="title">Разбор пробника №2</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Точечная доработка: №9, №16, №6</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Повторение первой части целиком</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Пробник №3</div><input type="checkbox" class="chk"></label>
+          <label class="lesson"><div class="title">Разбор пробника №2</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Точечная доработка: №9, №16, №6</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Повторение первой части целиком</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Пробник №3</div><input type="checkbox" class="chk" disabled></label>
         </div>
       </div>
 
@@ -212,10 +218,10 @@
         <div class="num-badge">08</div>
         <div class="month-head"><div class="name">Апрель</div><div class="range">финал проекта, пробник №4</div></div>
         <div class="lessons-col">
-          <label class="lesson"><div class="title">Разбор пробника №3</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Тренинг по «дорогим» заданиям (графы, часть 2)</div><input type="checkbox" class="chk"></label>
-          <label class="lesson project"><div class="title"><b>Финал проекта №2</b>, показ результата</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Пробник №4 — реальный тайминг</div><input type="checkbox" class="chk"></label>
+          <label class="lesson"><div class="title">Разбор пробника №3</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Тренинг по «дорогим» заданиям (графы, часть 2)</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson project"><div class="title"><b>Финал проекта №2</b>, показ результата</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Пробник №4 — реальный тайминг</div><input type="checkbox" class="chk" disabled></label>
         </div>
       </div>
 
@@ -223,10 +229,10 @@
         <div class="num-badge">09</div>
         <div class="month-head"><div class="name">Май</div><div class="range">пробник №5, экзамен в конце месяца</div></div>
         <div class="lessons-col">
-          <label class="lesson"><div class="title">Разбор пробника №4</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Пробник №5 — финальный, реальный тайминг</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Скоростной прогон всего теста</div><input type="checkbox" class="chk"></label>
-          <label class="lesson"><div class="title">Итоговый инструктаж + чек-лист «не потерять баллы на ровном месте»</div><input type="checkbox" class="chk"></label>
+          <label class="lesson"><div class="title">Разбор пробника №4</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Пробник №5 — финальный, реальный тайминг</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Скоростной прогон всего теста</div><input type="checkbox" class="chk" disabled></label>
+          <label class="lesson"><div class="title">Итоговый инструктаж + чек-лист «не потерять баллы на ровном месте»</div><input type="checkbox" class="chk" disabled></label>
         </div>
       </div>
 
