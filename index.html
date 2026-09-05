@@ -40,11 +40,16 @@
   .progress-band .big{font-family:'Unbounded',sans-serif;font-weight:800;font-size:36px;}
   .progress-band .big span{color:var(--lime);}
   .progress-band .lbl{font-size:12px;color:#C7C6E6;margin-top:2px;text-transform:uppercase;letter-spacing:.03em;}
-  .tracker{display:flex;flex-wrap:wrap;gap:4px;max-width:420px;}
-  .tick{width:12px;height:12px;border-radius:4px;background:rgba(255,255,255,.18);}
+  .tracker{display:flex;flex-wrap:nowrap;gap:4px;overflow-x:auto;max-width:100%;scrollbar-width:none;}
+  .tracker::-webkit-scrollbar{display:none;}
+  .tick{width:11px;height:11px;border-radius:4px;background:rgba(255,255,255,.18);flex:none;}
   .tick.done{background:var(--lime);}
 
-  .roadmap-scroll{overflow-x:auto;padding-bottom:14px;margin:0 -24px;padding-left:24px;padding-right:24px;}
+  .roadmap-scroll{overflow-x:auto;padding-bottom:14px;margin:0 -24px;padding-left:24px;padding-right:24px;position:relative;}
+  .roadmap-scroll::after{content:"";position:absolute;top:0;right:0;bottom:14px;width:64px;background:linear-gradient(90deg, transparent, var(--cream));pointer-events:none;}
+  .scroll-hint{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);font-weight:600;margin-bottom:10px;}
+  .scroll-hint .arrow{display:inline-block;animation:nudge 1.4s ease-in-out infinite;}
+  @keyframes nudge{0%,100%{transform:translateX(0);}50%{transform:translateX(4px);}}
   .months-row{display:flex;gap:16px;width:max-content;}
   .month-col{width:262px;flex:none;background:var(--white);border-radius:22px;padding:18px 16px 14px;box-shadow:0 6px 20px rgba(38,35,92,.06);}
 
@@ -104,6 +109,7 @@
     <div class="tracker" id="tracker"></div>
   </div>
 
+  <div class="scroll-hint">Весь год целиком — листай карусель вправо <span class="arrow">→</span></div>
   <div class="roadmap-scroll">
     <div class="months-row">
 
