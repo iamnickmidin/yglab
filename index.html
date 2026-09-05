@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Маршрут Никиты</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,15 +21,15 @@
   h1{font-family:'Unbounded',sans-serif;font-weight:800;font-size:44px;line-height:1.05;margin:0 0 12px;color:var(--navy);text-transform:uppercase;letter-spacing:-.01em;}
   .sub{color:var(--muted);font-size:15px;line-height:1.6;max-width:600px;margin-bottom:24px;}
 
-  .goals{background:var(--white);border-radius:22px;padding:22px 24px;margin-bottom:24px;max-width:900px;box-shadow:0 6px 20px rgba(38,35,92,.06);}
+  .goals{background:var(--white);border-radius:22px;padding:22px 24px;margin-bottom:24px;box-shadow:0 6px 20px rgba(38,35,92,.06);}
   .goals .tag{display:inline-block;background:var(--periwinkle);color:var(--navy);font-weight:700;font-size:11px;padding:3px 10px;border-radius:8px;margin-bottom:10px;}
-  .goals p{margin:0;font-size:14px;line-height:1.75;color:var(--muted);}
+  .goals p{margin:0;font-size:14px;line-height:1.75;color:var(--muted);max-width:760px;}
   .goals b{color:var(--navy);}
 
-  .goals-alt{background:var(--periwinkle);border-radius:22px;padding:22px 24px;margin-bottom:24px;max-width:900px;}
+  .goals-alt{background:var(--periwinkle);border-radius:22px;padding:22px 24px;margin-bottom:24px;}
   .goals-alt .tag{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:11px;padding:3px 10px;border-radius:8px;margin-bottom:12px;}
   .goals-alt .big-line{font-family:'Unbounded',sans-serif;font-weight:700;font-size:21px;line-height:1.3;color:var(--navy);margin:0 0 10px;}
-  .goals-alt p{margin:0;font-size:13.5px;line-height:1.75;color:var(--navy);opacity:.75;}
+  .goals-alt p{margin:0;font-size:13.5px;line-height:1.75;color:var(--navy);opacity:.75;max-width:760px;}
   .goals-alt b{opacity:1;}
 
   .progress-band{
@@ -81,6 +82,22 @@
   @media (max-width:640px){ .cta::after{display:none;} }
   .cta h3{font-family:'Unbounded',sans-serif;color:#fff;font-size:20px;margin:0 0 8px;text-transform:uppercase;}
   .cta p{color:#C7C6E6;font-size:13.5px;line-height:1.6;margin:0;}
+
+  .roadmap-scroll{scroll-snap-type:x proximity;}
+  .month-col{scroll-snap-align:start;}
+
+  @media (max-width:720px){
+    body{padding:28px 16px 50px;}
+    h1{font-size:32px;}
+    .sub{font-size:13.5px;}
+    .goals,.goals-alt{padding:18px 18px;}
+    .goals-alt .big-line{font-size:18px;}
+    .progress-band{padding:20px 20px;}
+    .progress-band .big{font-size:28px;}
+    .month-col{width:78vw;}
+    .cta{padding:24px 22px;}
+    .cta h3{font-size:17px;}
+  }
 </style>
 </head>
 <body>
